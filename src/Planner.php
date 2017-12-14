@@ -20,9 +20,10 @@ class Planner implements PlannerInterface
 
         $sorted = $cards->sort();
 
-        $plan = array_map(function (BoardingCardInterface $card) : string { return (string) $card; }, $sorted);
+        $plan = array_map(function (BoardingCardInterface $card) : string {
+            return (string) $card;
+        }, $sorted);
 
         return array_merge($plan, self::ARRIVAL_MESSAGE);
     }
-
 }

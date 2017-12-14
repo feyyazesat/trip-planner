@@ -11,5 +11,4 @@ class BoardingFromToCannotBeSamePlaceException extends \InvalidArgumentException
     {
         parent::__construct(sprintf("Boarding Card from %s to %s cannot be same.", $from, $to));
     }
-
 }

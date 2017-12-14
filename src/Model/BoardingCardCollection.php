@@ -16,7 +16,6 @@ class BoardingCardCollection
     public function addCard(BoardingCardInterface $card) : void
     {
         $this->cards[] = $card;
-
     }
 
     /**
@@ -55,5 +54,4 @@ class BoardingCardCollection
     {
         return $this->cards;
     }
-
 }

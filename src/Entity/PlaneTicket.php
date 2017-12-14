@@ -31,7 +31,6 @@ class PlaneTicket extends AbstractTicket implements BoardingCardInterface
     private function getBaggageDrop() : string
     {
         return is_null($this->baggageDrop) ? self::AUTOMATIC_BAGGAGE_DROP : sprintf(self::BAGGAGE_DROP, $this->baggageDrop);
-
     }
 
     /**

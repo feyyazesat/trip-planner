@@ -22,5 +22,4 @@ class Place
     {
         return $this->name;
     }
-
 }

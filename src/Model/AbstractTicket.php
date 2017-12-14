@@ -6,7 +6,6 @@ namespace App\Model;
 use App\Contract\BoardingCardInterface;
 use App\Exception\BoardingFromToCannotBeSamePlaceException;
 
-
 abstract class AbstractTicket implements BoardingCardInterface
 {
     protected $from;
