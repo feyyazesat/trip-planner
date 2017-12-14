@@ -24,7 +24,7 @@ class PlaneTicket extends AbstractTicket implements BoardingCardInterface
      * @param string $gate
      * @param int|null $baggageDrop
      */
-    public function __construct(Place $from, Place $to, string $seat, string $flightNumber, string $gate, ?int $baggageDrop)
+    public function __construct(Place $from, Place $to, string $seat, string $flightNumber, string $gate, ?int $baggageDrop = null)
     {
         $this->flightNumber  = $flightNumber;
         $this->baggageDrop = $baggageDrop;
