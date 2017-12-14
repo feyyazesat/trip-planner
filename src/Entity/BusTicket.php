@@ -28,7 +28,7 @@ class BusTicket extends AbstractTicket implements BoardingCardInterface
      */
     protected function getSeat() : string
     {
-        return $this->seat ? self::SEAT . $this->seat : self::NO_SEAT;
+        return $this->seat ? sprintf(self::SEAT, $this->seat) : self::NO_SEAT;
     }
 
     /**
