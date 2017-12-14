@@ -10,7 +10,7 @@ use App\Model\Place;
 class PlaneTicket extends AbstractTicket implements BoardingCardInterface
 {
     private const AUTOMATIC_BAGGAGE_DROP =  "Baggage will we automatically transferred from your last leg.";
-    private const BAGGAGE_DROP = "Baggage drop at ticket counter %d.";
+    private const BAGGAGE_DROP           = "Baggage drop at ticket counter %d.";
 
     private $flightNumber;
     private $gate;
@@ -27,7 +27,7 @@ class PlaneTicket extends AbstractTicket implements BoardingCardInterface
     public function __construct(Place $from, Place $to, string $seat, string $flightNumber, string $gate, ?int $baggageDrop = null)
     {
         $this->flightNumber  = $flightNumber;
-        $this->baggageDrop = $baggageDrop;
+        $this->baggageDrop   = $baggageDrop;
         $this->gate          = $gate;
         parent::__construct($from, $to, $seat);
     }
