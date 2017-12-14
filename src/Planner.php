@@ -11,19 +11,26 @@ class Planner implements PlannerInterface
 {
     private const ARRIVAL_MESSAGE = "You have arrived at your final destination.";
 
+    private $cards;
+
+    public function __construct(BoardingCardCollection $cards)
+    {
+        $this->cards = $cards;
+    }
+
     /**
      * @inheritdoc
      */
-    public function plan(BoardingCardCollection $cards) : array
+    public function plan() : array
     {
         // other implementations.
 
-        $sorted = $cards->sort();
+        $sorted = $this->cards->sort();
 
         $plan = array_map(function (BoardingCardInterface $card) : string {
             return (string) $card;
         }, $sorted);
 
-        return array_merge($plan, self::ARRIVAL_MESSAGE);
+        return array_merge($plan, [self::ARRIVAL_MESSAGE]);
     }
 }

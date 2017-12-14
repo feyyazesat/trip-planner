@@ -2,7 +2,7 @@
 require 'vendor/autoload.php';
 
 use App\Model\BoardingCardCollection;
-use App\Model\TrainTicket;
+use App\Entity\TrainTicket;
 use App\Entity\AirportBusTicket;
 use App\Model\Place;
 use App\Planner;
@@ -22,6 +22,6 @@ $boardingCardCollection->addCard(
 
 $planning = new Planner($boardingCardCollection);
 
-foreach ($planning as $plan) {
+foreach ($planning->plan() as $plan) {
     echo $plan . PHP_EOL;
 }

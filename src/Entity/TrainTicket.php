@@ -1,7 +1,10 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Model;
+namespace App\Entity;
+
+use App\Model\AbstractTicket;
+use App\Model\Place;
 
 use App\Contract\BoardingCardInterface;
 
@@ -12,6 +15,12 @@ class TrainTicket extends AbstractTicket implements BoardingCardInterface
 
     private $trainNumber;
 
+    /**
+     * @param Place $from
+     * @param Place $to
+     * @param string $seat
+     * @param string $trainNumber
+     */
     public function __construct(Place $from, Place $to, string $seat, string $trainNumber)
     {
         $this->trainNumber = $trainNumber;

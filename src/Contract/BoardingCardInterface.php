@@ -17,6 +17,7 @@ interface BoardingCardInterface
      * @return Place
      */
     public function getTo() : Place;
+
     /**
      * @return string
      */

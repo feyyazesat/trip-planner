@@ -1,7 +1,10 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Model;
+namespace App\Entity;
+
+use App\Model\AbstractTicket;
+use App\Model\Place;
 
 use App\Contract\BoardingCardInterface;
 
@@ -10,9 +13,14 @@ class BusTicket extends AbstractTicket implements BoardingCardInterface
     protected const SEAT    = 'seat %s';
     protected const NO_SEAT = 'No seat assignment.';
 
+    /**
+     * @param Place $from
+     * @param Place $to
+     * @param null|string $seat
+     */
     public function __construct(Place $from, Place $to, ?string $seat = null)
     {
-        parent::__construct($from, $to, $seat);
+        parent::__construct($from, $to, (string) $seat);
     }
 
     /**

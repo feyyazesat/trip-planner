@@ -5,7 +5,6 @@ namespace App\Entity;
 
 use App\Contract\BoardingCardInterface;
 use App\Model\AbstractTicket;
-use App\Model\BusTicket;
 use App\Model\Place;
 
 class PlaneTicket extends AbstractTicket implements BoardingCardInterface
@@ -17,6 +16,14 @@ class PlaneTicket extends AbstractTicket implements BoardingCardInterface
     private $gate;
     private $baggageDrop;
 
+    /**
+     * @param Place $from
+     * @param Place $to
+     * @param string $seat
+     * @param string $flightNumber
+     * @param string $gate
+     * @param int|null $baggageDrop
+     */
     public function __construct(Place $from, Place $to, string $seat, string $flightNumber, string $gate, ?int $baggageDrop)
     {
         $this->flightNumber  = $flightNumber;

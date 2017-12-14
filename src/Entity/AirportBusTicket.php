@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace App\Entity;
 
 use App\Contract\BoardingCardInterface;
-use App\Model\BusTicket;
 
 class AirportBusTicket extends BusTicket implements BoardingCardInterface
 {
