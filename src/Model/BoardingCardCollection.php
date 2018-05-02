@@ -7,13 +7,21 @@ use App\Contract\BoardingCardInterface;
 
 class BoardingCardCollection
 {
+
+    /**
+     * @var array $cards
+     */
     private $cards = [];
+
+    /**
+     * @var array $sorted
+     */
     private $sorted = [];
 
     /**
      * @param BoardingCardInterface $card
      */
-    public function addCard(BoardingCardInterface $card) : void
+    public function addCard(BoardingCardInterface $card): void
     {
         $this->cards[] = $card;
     }
@@ -21,7 +29,7 @@ class BoardingCardCollection
     /**
      * @return array
      */
-    public function sort() : array
+    public function sort(): array
     {
         /**
          * @var BoardingCardInterface $card1
@@ -50,7 +58,7 @@ class BoardingCardCollection
     /**
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         return $this->cards;
     }

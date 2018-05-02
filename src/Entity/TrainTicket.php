@@ -3,17 +3,20 @@ declare(strict_types = 1);
 
 namespace App\Entity;
 
-use App\Model\AbstractTicket;
 use App\Model\Place;
-
+use App\Model\AbstractTicket;
 use App\Contract\BoardingCardInterface;
 
 class TrainTicket extends AbstractTicket implements BoardingCardInterface
 {
+
     protected const SEAT    = 'seat %s';
     protected const NO_SEAT = 'No seat assignment.';
 
-    private $trainNumber;
+    /**
+     * @var string $trainNumber
+     */
+    private $trainNumber = '';
 
     /**
      * @param Place $from
@@ -30,15 +33,15 @@ class TrainTicket extends AbstractTicket implements BoardingCardInterface
     /**
      * @return string
      */
-    protected function getSeat() : string
+    protected function getSeat(): string
     {
-        return $this->seat ? self::SEAT . $this->seat : self::NO_SEAT;
+        return ($this->seat ? self::SEAT . $this->seat : self::NO_SEAT);
     }
 
     /**
      * @inheritdoc
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return sprintf(
             "Take train %s from %s to %s. Sit in seat %s.",

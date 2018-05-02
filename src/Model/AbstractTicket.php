@@ -8,9 +8,21 @@ use App\Exception\BoardingFromToCannotBeSamePlaceException;
 
 abstract class AbstractTicket implements BoardingCardInterface
 {
+
+    /**
+     * @param Place $from
+     */
     protected $from;
+
+    /**
+     * @var Place $to
+     */
     protected $to;
-    protected $seat;
+
+    /**
+     * @var string $seat
+     */
+    protected $seat = '';
 
     /**
      * @param Place $from
@@ -31,7 +43,7 @@ abstract class AbstractTicket implements BoardingCardInterface
     /**
      * @inheritdoc
      */
-    public function getTo() : Place
+    public function getTo(): Place
     {
         return $this->to;
     }
@@ -40,8 +52,8 @@ abstract class AbstractTicket implements BoardingCardInterface
      * @param BoardingCardInterface $card
      * @return bool
      */
-    public function compare(BoardingCardInterface $card) : bool
+    public function compare(BoardingCardInterface $card): bool
     {
-        return $card->getTo() == $this->from;
+        return ($card->getTo() == $this->from);
     }
 }

@@ -5,7 +5,11 @@ namespace App\Model;
 
 class Place
 {
-    private $name;
+
+    /**
+     * @var string $name
+     */
+    private $name = '';
 
     /**
      * @param string $name
@@ -18,7 +22,7 @@ class Place
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->name;
     }

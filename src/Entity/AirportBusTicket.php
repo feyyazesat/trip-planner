@@ -7,10 +7,11 @@ use App\Contract\BoardingCardInterface;
 
 class AirportBusTicket extends BusTicket implements BoardingCardInterface
 {
+
     /**
      * @inheritdoc
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return sprintf(
             "Take the airport bus from %s to %s. %s",

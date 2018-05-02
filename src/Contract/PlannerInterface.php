@@ -5,8 +5,9 @@ namespace App\Contract;
 
 interface PlannerInterface
 {
+
     /**
      * @return array
      */
-    public function plan() : array;
+    public function plan(): array;
 }

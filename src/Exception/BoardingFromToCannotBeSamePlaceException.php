@@ -7,6 +7,7 @@ use App\Model\Place;
 
 class BoardingFromToCannotBeSamePlaceException extends \InvalidArgumentException
 {
+
     /**
      * BoardingFromToCannotBeSamePlaceException constructor.
      * @param Place $from

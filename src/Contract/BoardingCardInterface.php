@@ -7,19 +7,20 @@ use App\Model\Place;
 
 interface BoardingCardInterface
 {
+
     /**
-     * @param BoardingCardInterface $card
+     * @param self $card
      * @return bool
      */
-    public function compare(self $card) : bool;
+    public function compare(self $card): bool;
 
     /**
      * @return Place
      */
-    public function getTo() : Place;
+    public function getTo(): Place;
 
     /**
      * @return string
      */
-    public function __toString() : string;
+    public function __toString(): string;
 }
